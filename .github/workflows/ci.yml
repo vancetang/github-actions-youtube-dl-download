@@ -13,6 +13,9 @@ jobs:
       - name: Clone repository  # 步骤名称
         uses: actions/checkout@v4  # 使用 actions/checkout 动作来克隆仓库
 
+      - name: Make youtube-dl executable
+        run: chmod +x ./bin/youtube-dl  # 给予执行权限
+
       - name: Install Git LFS # 使用LFS 上传大文件
         run: |
           curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
